@@ -1,0 +1,20 @@
+<div class="booyah-box col-10 offset-1">
+  <h1>Displace to Gas Calculator</h1>
+  <br />
+  <%= simple_form_for @well do |f| %>
+    <%= f.input :toptvd, label: 'Top TVD:', placeholder: '50' %>
+    <%= f.input :bottomtvd, label: 'Bottom TVD:', placeholder: '10000' %>
+    <%= f.input :gasgradient, label: 'Gas Gradient:', placeholder: '.15' %>
+    <%= f.input :influxtvd, label: 'Influx TVD:', placeholder: '12000' %>
+    <%= f.input :influxpressure, label: 'Influx Pressure', placeholder: '7500' %>
+    <br />
+    <%= f.submit 'Calculate', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+
+<% if flash[:notice] %>
+  <div class="notice booyah-box col-10 offset-1">
+    <h2>Results:</h2>
+    <%= flash[:notice] %>   
+  </div>
+<% end %>

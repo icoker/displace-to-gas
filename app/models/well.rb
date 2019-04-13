@@ -1,0 +1,2 @@
+class Well < ApplicationRecord
+end
